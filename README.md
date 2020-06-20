@@ -7,6 +7,7 @@ JKeyMaster
   * Windows
   * 基于X11的系统（理论上仅在某些Linux发行版和PCBSD上进行了测试）
   * Mac OSX
+
 详细用法参考：[java程序中注册设置全局系统级热键快捷键，支持Windows、Linux、Mac OSX](https://www.ivu4e.com/blog/lang/2020-06-20/483.html)
 
 构建
