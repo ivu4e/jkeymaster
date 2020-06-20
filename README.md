@@ -2,20 +2,21 @@ JKeyMaster
 ==========
 [![Build Status](https://travis-ci.org/tulskiy/jkeymaster.svg?branch=master)](https://travis-ci.org/tulskiy/jkeymaster)
 
-This is a java library that provides single interface to register Global Hotkeys for several platforms:
+这是一个Java库，它提供单个接口来注册多个平台的全局热键:
 
   * Windows
-  * X11-based systems (in theory, only tested on some Linux distros and PCBSD)
+  * 基于X11的系统（理论上仅在某些Linux发行版和PCBSD上进行了测试）
   * Mac OSX
+详细用法参考：[java程序中注册设置全局系统级热键快捷键，支持Windows、Linux、Mac OSX](https://www.ivu4e.com/blog/lang/2020-06-20/483.html)
 
-Building
+构建
 --------
 
-You will need Java 1.6+ and Maven to build
+需要 Java 1.6+ 和 Maven 用于构建
 
     mvn clean install
     
-for jkeymaster-dbus, you will need to download and build a few dependencies
+对于 jkeymaster-dbus, 你需要下载并构建几个依赖
 
     git clone git@github.com:tulskiy/libmatthew-java.git
     cd libmatthew-java
@@ -25,14 +26,14 @@ for jkeymaster-dbus, you will need to download and build a few dependencies
     cd dbus-java
     mvn clean install -DskipTests
     
-then you can build from project root with profile `linux`
+然后您可以使用配置文件`linux`从项目根目录进行构建
     
     mvn -P linux clean install 
 
 Maven
 -----
 
-Release version:
+Release 版本:
     
     <dependencies>
         <dependency>
@@ -42,7 +43,7 @@ Release version:
         </dependency>
     </dependencies>
     
-Snapshot version:
+Snapshot 版本:
     
     <dependencies>
         <dependency>
@@ -59,7 +60,7 @@ Snapshot version:
         </repository>
     </repositories>
 
-Logging
+日志
 -------
 
 JKeyMaster uses [slf4j](https://github.com/qos-ch/slf4j) as the logging framework. To get output from the library you
@@ -71,7 +72,7 @@ should include a slf4j binding to your classpath.
         <version>1.7.13</version>
     </dependency>
 
-Testing
+测试
 -------
 
 To test that the library works on your system, run the jar file
@@ -89,7 +90,7 @@ There's also a `Grab media keys` button that should register media keys
 If you get UnsatisfiedLinkError on linux, it is probable that you have an older jna version installed, see [#19](https://github.com/tulskiy/jkeymaster/issues/19)
 you will need to either remove libjna-java from your system, or add `-Djna.nosys=true` to jvm args
 
-API Example
+API 示例
 -----------
 
 Main class is `Provider`. To get provider for current platform:
